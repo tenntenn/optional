@@ -18,10 +18,10 @@ func (s *String) String() string {
 	return ""
 }
 
-// IsSet returns whether s is set as v or not.
-func (s *String) IsSet(v string) bool {
+// Match returns whether s is set as v or not.
+func (s *String) Match(v string) bool {
 	if s == nil {
-		return false
+		return true
 	}
 	return string(*s) == v
 }
@@ -44,10 +44,10 @@ func (f *Float32) Float32() float32 {
 	return 0
 }
 
-// IsSet returns whether f is set as v or not.
-func (f *Float32) IsSet(v float32) bool {
+// Match returns whether f is set as v or not.
+func (f *Float32) Match(v float32) bool {
 	if f == nil {
-		return false
+		return true
 	}
 	return float32(*f) == v
 }
@@ -70,10 +70,10 @@ func (f *Float64) Float64() float64 {
 	return 0
 }
 
-// IsSet returns whether f is set as v or not.
-func (f *Float64) IsSet(v float64) bool {
+// Match returns whether f is set as v or not.
+func (f *Float64) Match(v float64) bool {
 	if f == nil {
-		return false
+		return true
 	}
 	return float64(*f) == v
 }
@@ -96,10 +96,10 @@ func (n *Int) Int() int {
 	return 0
 }
 
-// IsSet returns whether n is set as v or not.
-func (n *Int) IsSet(v int) bool {
+// Match returns whether n is set as v or not.
+func (n *Int) Match(v int) bool {
 	if n == nil {
-		return false
+		return true
 	}
 	return int(*n) == v
 }
@@ -113,10 +113,10 @@ func NewBool(b bool) *Bool {
 	return &v
 }
 
-// IsSet returns whether b is set as v or not.
-func (b *Bool) IsSet(v bool) bool {
+// Match returns whether b is set as v or not.
+func (b *Bool) Match(v bool) bool {
 	if b == nil {
-		return false
+		return true
 	}
 	return bool(*b) == v
 }
