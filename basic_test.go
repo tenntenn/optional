@@ -78,6 +78,24 @@ func TestInt(t *testing.T) {
 	}
 }
 
+func TestInt64(t *testing.T) {
+	data := []struct {
+		O         *Int64
+		V         int64
+		IsMatched bool
+	}{
+		{O: NewInt64(1), V: 1, IsMatched: true},
+		{O: NewInt64(1), V: 2, IsMatched: false},
+		{O: nil, V: 1, IsMatched: true},
+	}
+
+	for i, d := range data {
+		if isMached := d.O.Match(d.V); isMached != d.IsMatched {
+			t.Errorf("data[%d].O.Match expects %v, but %v", i, d.IsMatched, isMached)
+		}
+	}
+}
+
 func TestBool(t *testing.T) {
 	data := []struct {
 		O         *Bool

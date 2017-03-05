@@ -104,6 +104,32 @@ func (n *Int) Match(v int) bool {
 	return int(*n) == v
 }
 
+// Int64 is an optional int value.
+type Int64 int64
+
+// NewInt64 creates new a Int64.
+func NewInt64(n int64) *Int64 {
+	v := Int64(n)
+	return &v
+}
+
+// Int64 returns int value.
+// When n is nil it returns 0.
+func (n *Int64) Int64() int64 {
+	if n != nil {
+		return int64(*n)
+	}
+	return 0
+}
+
+// Match returns whether n is set as v or not.
+func (n *Int64) Match(v int64) bool {
+	if n == nil {
+		return true
+	}
+	return int64(*n) == v
+}
+
 // Bool is an optional bool value.
 type Bool bool
 
