@@ -34,6 +34,11 @@ func TestTuple(t *testing.T) {
 		IsMatched bool
 	}{
 		{
+			T:         nil,
+			V:         nil,
+			IsMatched: true,
+		},
+		{
 			T:         NewTupple(nil, nil).Put(0, 1).Put(1, 2).Put(2, 3),
 			V:         []int{1, 2, 3},
 			IsMatched: true,

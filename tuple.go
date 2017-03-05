@@ -53,7 +53,7 @@ func (t *Tuple) PutAll(vs map[int]interface{}) *Tuple {
 func (t *Tuple) Match(v interface{}) bool {
 
 	if t == nil {
-		return false
+		return true
 	}
 
 	var seq Seq
