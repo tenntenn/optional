@@ -32,7 +32,7 @@ func (p *Parttern) Match(s string) bool {
 
 	switch {
 	case p.S != nil:
-		return p.S.IsSet(s)
+		return p.S.Match(s)
 	case p.R != nil:
 		return p.R.MatchString(s)
 	}
