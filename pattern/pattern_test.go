@@ -14,7 +14,7 @@ var (
 
 func TestPattern(t *testing.T) {
 	data := []struct {
-		P         *Parttern
+		P         *Pattern
 		V         string
 		IsMatched bool
 	}{
@@ -23,9 +23,9 @@ func TestPattern(t *testing.T) {
 		{P: WithRegexp(reg), V: "go", IsMatched: true},
 		{P: WithRegexp(reg), V: "goooo", IsMatched: true},
 		{P: WithRegexp(reg), V: "goto", IsMatched: false},
-		{P: &Parttern{S: optional.NewString("test"), R: reg}, V: "test", IsMatched: true},
-		{P: &Parttern{S: optional.NewString("test"), R: reg}, V: "go", IsMatched: false},
-		{P: &Parttern{}, V: "test", IsMatched: false},
+		{P: &Pattern{S: optional.NewString("test"), R: reg}, V: "test", IsMatched: true},
+		{P: &Pattern{S: optional.NewString("test"), R: reg}, V: "go", IsMatched: false},
+		{P: &Pattern{}, V: "test", IsMatched: false},
 		{P: nil, V: "test", IsMatched: false},
 	}
 
