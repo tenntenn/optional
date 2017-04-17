@@ -2,6 +2,10 @@ package optional
 
 import "reflect"
 
+const (
+	Last = -1
+)
+
 // Tuple is option values which are ordered.
 type Tuple struct {
 	m map[int]interface{}
