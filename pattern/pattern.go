@@ -27,7 +27,7 @@ func WithRegexp(r *regexp.Regexp) *Pattern {
 // if p is nil Match returns false.
 func (p *Pattern) Match(s string) bool {
 	if p == nil {
-		return false
+		return true
 	}
 
 	switch {
@@ -36,5 +36,5 @@ func (p *Pattern) Match(s string) bool {
 	case p.R != nil:
 		return p.R.MatchString(s)
 	}
-	return false
+	return true
 }

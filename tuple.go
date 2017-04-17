@@ -80,7 +80,7 @@ func (t *Tuple) Match(v interface{}) bool {
 		}
 
 		if i < 0 {
-			i = seq.Len() - i
+			i = seq.Len() + i
 		}
 
 		if t.Eq != nil {
